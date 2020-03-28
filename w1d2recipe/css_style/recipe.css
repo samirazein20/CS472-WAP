@@ -1,0 +1,37 @@
+body{
+    background-color: #FFFFFF;
+    color: #404040;
+    font-size: 11px;
+    font-family: Georgia, Garamond, serif;
+}
+
+h2{
+    background-color: #F0F0F0;
+    color: #A4A400;
+    font-family: "Lucida Sans Unicode", Helvetica , Arial, serif;
+    text-decoration: underline;
+
+}
+
+.mainHeading{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.otherHeading{
+    font-size: 18px;
+    text-align: left;
+}
+
+a{
+    color: #A4A400 ;
+}
+
+abbr:hover{
+    border-bottom: 1px dotted black;
+}
+
+#myParagrapgh{
+    float: right;
+}
