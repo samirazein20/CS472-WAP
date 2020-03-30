@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../Lab5_JavaScript/javaScriptTest.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -62,17 +63,17 @@
                                 <form>
                                     <div class="form-group required">
                                         <label for="pdtNum">Product Number</label>
-                                        <input type="text" class="form-control form-control-lg" id="pdtNum"
+                                        <input type="text" class="form-control form-control-lg" id="productNumber"
                                             placeholder="Enter Product Number">
                                     </div><br>
                                     <div class="form-group required">
                                         <label for="pdtName">Name</label>
-                                        <input type="text" class="form-control form-control-lg" id="pdtName"
+                                        <input type="text" class="form-control form-control-lg" id="productName"
                                             placeholder="Enter Product Name">
                                     </div><br>
                                     <div class="form-group">
-                                        <label for="price">Unit Price</label>
-                                        <input type="text" class="form-control form-control-lg" id="price"
+                                        <label for="unitPrice">Unit Price</label>
+                                        <input type="text" class="form-control form-control-lg" id="unitPrice"
                                             placeholder="0.0">
                                     </div><br>
                                 </form>
@@ -89,8 +90,8 @@
                             <div class="tile-body">
                                 <form>
                                     <div class="form-group required">
-                                        <label for="qty">Quantity In Stock</label>
-                                        <input type="number" class="form-control form-control-lg" id="qty"
+                                        <label for="quantity">Quantity In Stock</label>
+                                        <input type="number" class="form-control form-control-lg" id="quantity"
                                             placeholder="0">
                                     </div><br>
                                     <div class="form-group required">
@@ -105,8 +106,8 @@
                                         </select>
                                     </div><br>
                                     <div class="form-group">
-                                        <label for="pdtName">Date Supplied</label>
-                                        <input type="date" class="form-control form-control-lg" id="date"
+                                        <label for="dateSupplied">Date Supplied</label>
+                                        <input type="date" class="form-control form-control-lg" id="dateSupplied"
                                             placeholder="yyyy-mm-dd">
                                         <small id="date" class="form-text text-muted">Enter a Valid Date</small>
                                     </div><br>
@@ -114,7 +115,7 @@
                                         
                                             <button type="reset" class="btn btn-outline-primary">Reset</button>
                                             <button type="button" class="btn btn-outline-danger">Cancel</button>
-                                            <button type="button" class="btn btn-outline-success">Add Product</button>
+                                            <button type="button" class="btn btn-outline-success" onclick="productValues()">Add Product</button>
                                     </div><br>
                                 </form>
                             </div>

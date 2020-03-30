@@ -52,12 +52,9 @@ function sum(arr = []) {
 }
 
 function multiply(arr = []) {
-    let multiple = 0;
-    while (arr.length !== 0) {
-        for (let i = 0; i < arr.length; i++) {
-            multiple *= arr[i];
-        }
-
+    let multiple = 1;
+    for (let i = 0; i < arr.length; i++) {
+        multiple *= arr[i];
     }
     return multiple;
 }
@@ -68,10 +65,14 @@ console.log(multiply(arr1));
 
 // Qn. 5 -> computing reverse of a string
 function reverse(str) {
-    for (i < str.length; i >= 0; i--) {
-        return str.charAt(i);
+    let reversedWord = '';
+    for (let i = str.length; i > 0; i--) {
+        reversedWord += str[i - 1];
     }
+    return reversedWord;
 }
+console.log("reverse string");
+console.log(reverse("words"));
 // Qn. 6 -> finding length of the longest word
 function findLongestWord(arr = []) {
     let maxLength = 0;
@@ -84,6 +85,8 @@ function findLongestWord(arr = []) {
     }
     return maxLength;
 }
+console.log("longest words length")
+console.log(findLongestWord(["word", "words", "wording"]));
 // Qn. 7 -> filtering longest in an array
 function filterLongWords(arr = [], i) {
     let longWordsArr = [];
@@ -91,63 +94,113 @@ function filterLongWords(arr = [], i) {
     return longWordsArr;
 
 }
+console.log("longest words")
+console.log(filterLongWords(["word", "words", "wording"], 6));
 // Qn. 8 -> finding largest between two numbers
 
 function computeSumOfSquares(arr = []) {
-    const arrNum = 0;
-    arrNum = arr.map(num => num * num).reduce(function () {
-        (accumulator, currentValue) => accumulator +
-            currentValue;
-    });
-
+    let arrNum = arr.map(num => num * num).reduce((a, b) => a + b, 0);
     return arrNum;
 }
+console.log("sum of squares")
+console.log(computeSumOfSquares([1, 2, 3, 4]));
 // Qn. 9 -> finding and printing only odd numbers
 function printOddNumbersOnly(arr = []) {
     let oddArr = [];
-    oddArr = arr.filter(function (num) { return (num % 2 !== 0) });
     oddArr = arr.filter(num => (num % 2 !== 0));
     return oddArr;
 }
+console.log("odd numbers only");
+console.log(printOddNumbersOnly([1, 2, 3, 4]));
 // Qn. 10 -> sum of squares of only even numbers 
 function computeSumOfSquaresOfEvensOnly(arr = []) {
-    const evenNum = 0;
-    evenNum = arr.filter(num => (num % 2 === 0)).map(num => num * num).reduce(function () {
-        (accumulator, currentValue) => accumulator +
-            currentValue;
-    });
+    let evenNum = 0;
+    evenNum = arr.filter(num => (num % 2 === 0)).map(num => num * num).reduce((a, b) => a + b, 0);
+
 
     return evenNum;
 }
+console.log("sum of even squares only");
+console.log(computeSumOfSquaresOfEvensOnly([1, 2, 3, 4]));
 // Qn. 11 -> re-implementing Qn. 4 using Array.reduce(...) function
 function sumReduce(arr = []) {
-    const sum = 0;
-    sum = arr.reduce(function () { (accumulator, currentValue) => accumulator + currentValue; });
+    let sum = arr.reduce((a, b) => a + b, 0);
     return sum;
 }
+console.log("sum using reduce");
+console.log(sumReduce([1, 2, 3, 4]));
 
 function multiplyReduce(arr = []) {
-    let multiple = 0;
-    const multiples = (accumulator, currentValue) => accumulator + currentValue;
-    multiple = arr.reduce(multiples);
+    let multiple = arr.reduce((a, b) => a * b, 1);
     return multiple;
 }
+console.log("mutiply using reduce");
+console.log(multiplyReduce([1, 2, 3, 4]));
 // Qn. 12 -> finding largest between two numbers
 function findSecondBiggest(arr = []) {
-    let maxVal = (accumulator, currentValue) => accumulator > currentValue;
-    const max = arr.reduce(maxVal);
-    const ind = arr.indexOf(max);
-    arr.splice(ind, 1)
-    //now again max of left over elements in array
-    //gives second largest number//
-    const sndMax = arr.reduce(maxVal);
-    return sndMax;
+    let biggestNum = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > biggestNum) {
+            biggestNum = arr[i];
+        }
 
+    }
+    let arrs = arr.filter(x => x != biggestNum);
+    biggestNum = arrs[0];
+    for (let i = 0; i < arrs.length; i++) {
+        if (arrs[i] > biggestNum) {
+            biggestNum = arrs[i];
+        }
+    }
+    return biggestNum;
 }
+console.log("finding second biggest");
+console.log(findSecondBiggest([1, 2, 3, 4]));
 // Qn. 13 -> printing fibonacci sequence of given length
-function printFibo(n, a, b){
-    
+function printFibo(n, a, b) {
+    if (n == 0) return []
+    if (n == 1) return [a]
+    let fib = [a, b]
+    for (let i = 2; i < n; i++) {
+        fib.push(fib[i - 1] + fib[i - 2])
+    }
+    return fib
 }
-// Qn. 14(A) -> finding largest between two numbers
-// Qn. 14(B) -> finding largest between two numbers
-// Qn. 15 -> finding largest between two numbers
+console.log("-- Fibonnaci Series --")
+console.log(printFibo(0, 0, 1))
+console.log(printFibo(1, 0, 1))
+console.log(printFibo(2, 0, 1))
+console.log(printFibo(3, 0, 1))
+console.log(printFibo(6, 0, 1))
+console.log(printFibo(10, 0, 1))
+
+// Qn. 14(A) -> Login form
+function sumittedVals() {
+    const website = document.getElementById("website");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    console.log("Website: " + website);
+    console.log("Email: " + email);
+    console.log("Password: " + password);
+}
+// Qn. 14(B) -> Add Product form
+function productValues() {
+    let message = ""
+    const product = document.getElementById("productNumber").value;
+    if (product != "") message += "Product Number: " + product +'\n';
+    const quantity = document.getElementById("quantity").value;
+    if (quantity != "") message += " Quantity: " + quantity +'\n';
+    const name = document.getElementById("productName").value;
+    if (name != "") message += " Product Name: " + name +'\n';
+    const supplier = document.getElementById("supplier").value;
+    if (supplier != "") message += " Supplier: " + supplier +'\n';
+    const price = document.getElementById("unitPrice").value;
+    if (price != "") message += " Unit Price: " + price +'\n';
+    const dateS = document.getElementById("dateSupplied").value;
+    if (dateS != "") message += " Date Supplied: " + dateS;
+    alert(message);
+}
+// Qn. 15 -> clock
+//please check clock .js in the clock folder.
+
+

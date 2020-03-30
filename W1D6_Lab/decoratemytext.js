@@ -5,13 +5,14 @@ function display() {
     // const size = textArea.style.fontSize;
     // textArea.style.fontSize = "2em";
     // // alert("hello world!!")
+    const txtSize = document.getElementById("txtarea");
+    let fontSize = parseInt(window.getComputedStyle(document.getElementById("txtarea")).fontSize);
+    txtSize.style.fontSize = fontSize + 2 + "px";
 
-    let txtSize = parseInt(document.getElementById('txtarea').style.fontSize);
-    console.log('before : ' + txtSize);
-    txtSize += 2;
-    document.getElementById('txtarea').style.fontSize = txtSize + 'px';
-    console.log('final : ' + txtSize);
+}
 
+function displayAlert() {
+    alert("Hello, world!");
 }
 
 function enlargingWithTime() {
@@ -35,6 +36,44 @@ function changeDeco() {
         textArea.style.color = "black"
         textArea.style.textDecoration = "none"
         body.style.backgroundColor = "white";
+    }
+
+    function transformPigLatin() {
+        const words = document.getElementById("txtarea").value;
+        const arr = words.split(' ');
+        for (let i=0;i<arr.length;i++) {
+            var word = arr[i];
+            if (word.length > 0 && isNaN(word)) {
+                arr[i] = consonantCheck(word);
+            }
+        }
+        document.getElementById("txtarea").value = arr.join(' ');
+    
+    }
+    
+    function consonantCheck(word) {
+        let firstLetter = word.charAt(0)
+        let result = ['a', 'e', 'i', 'o', 'u'].indexOf(firstLetter.toLowerCase());
+        if (result >= 0) {
+            word += 'ay';
+        }
+        else {
+            word = word.substring(1);
+            word += firstLetter + 'ay';
+        }
+        return word;
+    }
+    
+    function transformMalkovitch() {
+        const words = document.getElementById("txtarea").value;
+        const arr = words.split(' ');
+        for (let i=0;i<arr.length;i++) {
+            var word = arr[i];
+            if (word.length >= 5 && isNaN(word)) {
+                arr[i] = "Malkovitch";
+            }
+        }
+        document.getElementById("txtarea").value = arr.join(' ');
     }
 
 }
