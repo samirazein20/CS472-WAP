@@ -1,0 +1,6 @@
+Question 7:
+In Question 6, counter is the free variable
+A free variable is a variable referred to by its by a function that is neither it's parameter nor it's local variable. 
+ 
+QUESTION 9
+Use the module pattern can remove all names from the global name space and keep the global name space clean.
