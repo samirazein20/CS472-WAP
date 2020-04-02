@@ -183,6 +183,15 @@ function sumittedVals() {
     console.log("Email: " + email);
     console.log("Password: " + password);
 }
+
+//professor correction
+document.getElementById("formSubmit").addEventListener(
+    "submit",
+    function(event){
+        event.preventDefault();
+        console.log(document.getElementById("email").value);
+    }
+)
 // Qn. 14(B) -> Add Product form
 function productValues() {
     let message = ""
@@ -202,5 +211,15 @@ function productValues() {
 }
 // Qn. 15 -> clock
 //please check clock .js in the clock folder.
+
+function readTime(){
+    let n = new Date();
+    let t = `${n.getFullYear()} - ${n.getMonth()+1} - ${n.getDate()} ${n.getHours()} : ${n.getMinutes()} : ${n.getSeconds()}`;
+    document.getElementById("newCount").innerHTML = t;
+
+    setTimeout(readTime, 1000);
+}
+
+
 
 
