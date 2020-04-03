@@ -57,13 +57,16 @@ let newPerson = newPersonClass.Person("Zein Samira", "1995-03-25");
 console.log(newPersonClass.toString());
 
 //Question 4 (Login form)
+console.log("question4-------0");
 $(function() {
-    $('#submit').on("submit",
+    console.log("question4-------1");
+    $('#submitButton').on("click",
         function(evt) {
-            evt.preventDefault();
+            console.log("question4-------2");
             console.log("Email: " + document.getElementById('email').value);
             console.log("Password: " + document.getElementById('password').value);
             console.log("Website: " + document.getElementById('website').value);
+            evt.preventDefault();
         });
 
     //Question 4 (Add Product form)
