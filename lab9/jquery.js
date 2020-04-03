@@ -55,11 +55,52 @@ class PersonClass {
 let newPersonClass = new PersonClass();
 let newPerson = newPersonClass.Person("Zein Samira", "1995-03-25");
 console.log(newPersonClass.toString());
-//Question 4
+
+//Question 4 (Login form)
 $(function() {
-    $('#submit').click(function() {
-        let elmId = document.getElementById("email").val();
-        alert(elmId);
-    });
+    $('#submit').on("submit",
+        function(evt) {
+            evt.preventDefault();
+            // @ts-ignore
+            console.log("Email: " + document.getElementById('email').value);
+            // @ts-ignore
+            console.log("Password: " + document.getElementById('password').value);
+            // @ts-ignore
+            console.log("Website: " + document.getElementById('website').value);
+        });
 
 });
+//Question 4 (Add Product form)
+$("#productForm").on(
+    "submit",
+    function(event) {
+        event.preventDefault();
+        let productNumber = document.getElementById('productNumber').value;
+        let quantityInStock = document.getElementById('quantityInStock').value;
+        let productName = document.getElementById('productName').value;
+        let supplier = document.getElementById('supplier').value;
+        let price = document.getElementById('price').value;
+        let date = document.getElementById('date').value;
+
+        /*  let arr = {
+             "ProductNumber": productNumber,
+             "QuantityInStock": quantityInStock,
+             "ProductName": productName,
+             "Supplier": supplier,
+             "Price": price,
+             "Date": date
+         };
+         for (const field in arr) {
+             console.log(field +": " + arr[field]);
+         } */
+
+
+        let txt1 = $("<p>").html(productNumber);
+        let txt2 = $("<p>").html(quantityInStock);
+        let txt3 = $("<p>").html(productName);
+        let txt4 = $("<p>").html(supplier);
+        let txt5 = $("<p>").html(price);
+        let txt6 = $("<p>").html(date);
+        console.log("txt6 content " + txt6.html())
+        $("container").append(txt1, txt2, txt3, txt4, txt5, txt6);
+    });
