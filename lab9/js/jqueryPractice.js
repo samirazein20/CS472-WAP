@@ -12,10 +12,10 @@ const person = {
 
 let isAPerson = Object.create(person);
 isAPerson.setName("John");
-isAPerson.dateOfBirth = "1998-12-10";
+isAPerson.dateOfBirth = new Date(1998 - 12 - 10);
 
-console.log("The person's name is " + isAPerson.getName());
-console.log(isAPerson.getName() + " was born in " + isAPerson.dateOfBirth);
+console.log(`"The person's name is " ${isAPerson.getName()}`);
+console.log(`${isAPerson.getName()} + " was born in " ${isAPerson.dateOfBirth}`);
 
 //Question two
 let toDay = new Date();
@@ -57,9 +57,10 @@ let newPerson = newPersonClass.Person("Zein Samira", "1995-03-25");
 console.log(newPersonClass.toString());
 
 //Question 4 (Login form)
-$(function() {
-    $('#submitButton').on("click",
+$(document).ready(function() {
+    $('#submitButton').click(
         function(evt) {
+            alert("Hello am clicked");
             console.log("Email: " + document.getElementById('email').value);
             console.log("Password: " + document.getElementById('password').value);
             console.log("Website: " + document.getElementById('website').value);
@@ -67,37 +68,25 @@ $(function() {
         });
 
     //Question 4 (Add Product form)
-    $("#submitPdt").on("click",
-        function(event) {
-            event.preventDefault();
-            let productNumber = document.getElementById('productNumber').value;
-            let quantityInStock = document.getElementById('quantity').value;
-            let productName = document.getElementById('productName').value;
-            let supplier = document.getElementById('supplier').value;
-            let unitPrice = document.getElementById('unitPrice').value;
-            let dateSupplied = document.getElementById('dateSupplied').value;
+    $("#productSubmit").on("click", function(evt) {
+        const pdtName = $("#productName").val();
+        const qtyInStock = $("#quantity").val();
+        const pdtNumber = $("#productNumber").val();
+        const unit = $("#unitPrice").val();
+        const supplier = $("#supplier").val();
+        const dateSupplied = $("#dateSupplied").val();
 
-            /*  let arr = {
-                 "ProductNumber": productNumber,
-                 "QuantityInStock": quantityInStock,
-                 "ProductName": productName,
-                 "Supplier": supplier,
-                 "Price": price,
-                 "Date": date
-             };
-             for (const field in arr) {
-                 console.log(field +": " + arr[field]);
-             } */
+        const divProductData = $("#newDivs");
+        $("#pdtName").text(pdtName);
+        $("#pdtQty").text(qtyInStock);
+        $("#pdtNum").text(pdtNumber);
+        $("#unit").text(unit);
+        $("#suppliers").text(supplier);
+        $("#date").text(dateSupplied);
 
+        divProductData.css("display", "block");
+        evt.preventDefault();
 
-            let text1 = $("<p>").html(productNumber);
-            let text2 = $("<p>").html(quantityInStock);
-            let text3 = $("<p>").html(productName);
-            let text4 = $("<p>").html(supplier);
-            let text5 = $("<p>").html(unitPrice);
-            let text6 = $("<p>").html(dateSupplied);
-            console.log("text6 content " + text6.html())
-            $("container").append(text1, text2, text3, text4, text5, text6);
-        });
+    });
 
 });
