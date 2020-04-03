@@ -176,35 +176,35 @@ console.log(printFibo(10, 0, 1))
 
 // Qn. 14(A) -> Login form
 function sumittedVals() {
-    const website = document.getElementById("website");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
+    const website = document.getElementById("website").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
     console.log("Website: " + website);
     console.log("Email: " + email);
     console.log("Password: " + password);
 }
 
 //professor correction
-document.getElementById("formSubmit").addEventListener(
-    "submit",
-    function(event){
-        event.preventDefault();
-        console.log(document.getElementById("email").value);
-    }
-)
+// document.getElementById("formSubmit").addEventListener(
+//         "submit",
+//         function(event) {
+//             event.preventDefault();
+//             console.log(document.getElementById("email").value);
+//         }
+//     )
 // Qn. 14(B) -> Add Product form
 function productValues() {
     let message = ""
     const product = document.getElementById("productNumber").value;
-    if (product != "") message += "Product Number: " + product +'\n';
+    if (product != "") message += "Product Number: " + product + '\n';
     const quantity = document.getElementById("quantity").value;
-    if (quantity != "") message += " Quantity: " + quantity +'\n';
+    if (quantity != "") message += " Quantity: " + quantity + '\n';
     const name = document.getElementById("productName").value;
-    if (name != "") message += " Product Name: " + name +'\n';
+    if (name != "") message += " Product Name: " + name + '\n';
     const supplier = document.getElementById("supplier").value;
-    if (supplier != "") message += " Supplier: " + supplier +'\n';
+    if (supplier != "") message += " Supplier: " + supplier + '\n';
     const price = document.getElementById("unitPrice").value;
-    if (price != "") message += " Unit Price: " + price +'\n';
+    if (price != "") message += " Unit Price: " + price + '\n';
     const dateS = document.getElementById("dateSupplied").value;
     if (dateS != "") message += " Date Supplied: " + dateS;
     alert(message);
@@ -212,14 +212,10 @@ function productValues() {
 // Qn. 15 -> clock
 //please check clock .js in the clock folder.
 
-function readTime(){
+function readTime() {
     let n = new Date();
     let t = `${n.getFullYear()} - ${n.getMonth()+1} - ${n.getDate()} ${n.getHours()} : ${n.getMinutes()} : ${n.getSeconds()}`;
     document.getElementById("newCount").innerHTML = t;
 
     setTimeout(readTime, 1000);
 }
-
-
-
-

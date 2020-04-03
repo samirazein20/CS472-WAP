@@ -61,46 +61,44 @@ $(function() {
     $('#submit').on("submit",
         function(evt) {
             evt.preventDefault();
-            // @ts-ignore
             console.log("Email: " + document.getElementById('email').value);
-            // @ts-ignore
             console.log("Password: " + document.getElementById('password').value);
-            // @ts-ignore
             console.log("Website: " + document.getElementById('website').value);
         });
 
+    //Question 4 (Add Product form)
+    $("#submitButton").on(
+        "submit",
+        function(event) {
+            event.preventDefault();
+            let productNumber = document.getElementById('productNumber').value;
+            let quantityInStock = document.getElementById('quantity').value;
+            let productName = document.getElementById('productName').value;
+            let supplier = document.getElementById('supplier').value;
+            let unitPrice = document.getElementById('unitPrice').value;
+            let dateSupplied = document.getElementById('dateSupplied').value;
+
+            /*  let arr = {
+                 "ProductNumber": productNumber,
+                 "QuantityInStock": quantityInStock,
+                 "ProductName": productName,
+                 "Supplier": supplier,
+                 "Price": price,
+                 "Date": date
+             };
+             for (const field in arr) {
+                 console.log(field +": " + arr[field]);
+             } */
+
+
+            let text1 = $("<p>").html(productNumber);
+            let text2 = $("<p>").html(quantityInStock);
+            let text3 = $("<p>").html(productName);
+            let text4 = $("<p>").html(supplier);
+            let text5 = $("<p>").html(unitPrice);
+            let text6 = $("<p>").html(dateSupplied);
+            console.log("text6 content " + text6.html())
+            $("container").append(text1, text2, text3, text4, text5, text6);
+        });
+
 });
-//Question 4 (Add Product form)
-$("#submitButton").on(
-    "submit",
-    function(event) {
-        event.preventDefault();
-        let productNumber = document.getElementById('productNumber').value;
-        let quantityInStock = document.getElementById('quantity').value;
-        let productName = document.getElementById('productName').value;
-        let supplier = document.getElementById('supplier').value;
-        let unitPrice = document.getElementById('unitPrice').value;
-        let dateSupplied = document.getElementById('dateSupplied').value;
-
-        /*  let arr = {
-             "ProductNumber": productNumber,
-             "QuantityInStock": quantityInStock,
-             "ProductName": productName,
-             "Supplier": supplier,
-             "Price": price,
-             "Date": date
-         };
-         for (const field in arr) {
-             console.log(field +": " + arr[field]);
-         } */
-
-
-        let text1 = $("<p>").html(productNumber);
-        let text2 = $("<p>").html(quantityInStock);
-        let text3 = $("<p>").html(productName);
-        let text4 = $("<p>").html(supplier);
-        let text5 = $("<p>").html(unitPrice);
-        let text6 = $("<p>").html(dateSupplied);
-        console.log("text6 content " + text6.html())
-        $("container").append(text1, text2, text3, text4, text5, text6);
-    });
