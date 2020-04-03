@@ -71,16 +71,16 @@ $(function() {
 
 });
 //Question 4 (Add Product form)
-$("#productForm").on(
+$("#submitButton").on(
     "submit",
     function(event) {
         event.preventDefault();
         let productNumber = document.getElementById('productNumber').value;
-        let quantityInStock = document.getElementById('quantityInStock').value;
+        let quantityInStock = document.getElementById('quantity').value;
         let productName = document.getElementById('productName').value;
         let supplier = document.getElementById('supplier').value;
-        let price = document.getElementById('price').value;
-        let date = document.getElementById('date').value;
+        let unitPrice = document.getElementById('unitPrice').value;
+        let dateSupplied = document.getElementById('dateSupplied').value;
 
         /*  let arr = {
              "ProductNumber": productNumber,
@@ -95,12 +95,12 @@ $("#productForm").on(
          } */
 
 
-        let txt1 = $("<p>").html(productNumber);
-        let txt2 = $("<p>").html(quantityInStock);
-        let txt3 = $("<p>").html(productName);
-        let txt4 = $("<p>").html(supplier);
-        let txt5 = $("<p>").html(price);
-        let txt6 = $("<p>").html(date);
-        console.log("txt6 content " + txt6.html())
-        $("container").append(txt1, txt2, txt3, txt4, txt5, txt6);
+        let text1 = $("<p>").html(productNumber);
+        let text2 = $("<p>").html(quantityInStock);
+        let text3 = $("<p>").html(productName);
+        let text4 = $("<p>").html(supplier);
+        let text5 = $("<p>").html(unitPrice);
+        let text6 = $("<p>").html(dateSupplied);
+        console.log("text6 content " + text6.html())
+        $("container").append(text1, text2, text3, text4, text5, text6);
     });
