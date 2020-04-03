@@ -57,12 +57,9 @@ let newPerson = newPersonClass.Person("Zein Samira", "1995-03-25");
 console.log(newPersonClass.toString());
 
 //Question 4 (Login form)
-console.log("question4-------0");
 $(function() {
-    console.log("question4-------1");
     $('#submitButton').on("click",
         function(evt) {
-            console.log("question4-------2");
             console.log("Email: " + document.getElementById('email').value);
             console.log("Password: " + document.getElementById('password').value);
             console.log("Website: " + document.getElementById('website').value);
@@ -70,8 +67,7 @@ $(function() {
         });
 
     //Question 4 (Add Product form)
-    $("#submitButton").on(
-        "submit",
+    $("#submitPdt").on("click",
         function(event) {
             event.preventDefault();
             let productNumber = document.getElementById('productNumber').value;
