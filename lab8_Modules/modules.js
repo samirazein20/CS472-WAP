@@ -1,18 +1,20 @@
 /*Author : Zein Samira*/
 "use strict";
 /* QUESTION 6 */
-const count_Module = (function () {
+const count_Module = (function() {
     let counter = 0;
+
     function add() {
         counter += 1;
     }
+
     function reset() {
         counter = 0;
     }
     return {
         add: add,
         reset: reset,
-        counter: function () {
+        counter: function() {
             return counter;
         }
 
@@ -29,11 +31,11 @@ console.log("count " + count_Module.counter());
  * */
 
 /* Question 8:*/
-(function () {
+(function() {
     console.log("------ QUESTION 8 ------");
-    const make_adder = function (inc) {
+    const make_adder = function(inc) {
         let counter = 0;
-        return function () {
+        return function() {
             return counter += inc;
         }
     };
@@ -53,37 +55,37 @@ Use the module pattern can remove all names from the global name space and keep 
 */
 
 /* QUESTION 10
-*/
-const Employee = (function () {
+ */
+const Employee = (function() {
     console.log("------ QUESTION 10 ------");
     let name = "";
     let age = 0;
     let salary = 0;
-    const getName = function () {
+    const getName = function() {
         return name;
     };
-    const getAge = function () {
+    const getAge = function() {
         return age;
     };
-    const getSalary = function () {
+    const getSalary = function() {
         return salary;
     };
 
-    const setName = function (newName) {
+    const setName = function(newName) {
         name = newName;
     };
-    const setAge = function (newAge) {
+    const setAge = function(newAge) {
         age = newAge;
     };
-    const setSalary = function (newSalary) {
+    const setSalary = function(newSalary) {
         salary = newSalary;
     };
-    const increaseSalary = function (percentage) {
-        salary = getSalary + (getSalary * percentage / 100);
+    const increaseSalary = function(percentage) {
+        salary = getSalary() + (getSalary() * percentage / 100);
         setSalary(salary);
     };
-    const incrementAge = function () {
-        setAge(getAge + 1);
+    const incrementAge = function() {
+        setAge(getAge() + 1);
     }
 
     return {
@@ -103,13 +105,12 @@ Employee
 /* Question 11 */
 console.log("------ QUESTION 11 ------");
 Employee.address = "";
-Employee.getAddress = function () {
-  return Employee.address;
+Employee.getAddress = function() {
+    return Employee.address;
 };
-Employee.setAddress = function (newAddress) {
-  Employee.address = newAddress;
+Employee.setAddress = function(newAddress) {
+    Employee.address = newAddress;
 };
 
 Employee.setAddress("Fairfield");
 console.log(" Address: " + Employee.getAddress());
-

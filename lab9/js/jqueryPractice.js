@@ -61,9 +61,9 @@ $(document).ready(function() {
     $('#submitButton').click(
         function(evt) {
             alert("Hello am clicked");
-            console.log("Email: " + document.getElementById('email').value);
-            console.log("Password: " + document.getElementById('password').value);
-            console.log("Website: " + document.getElementById('website').value);
+            console.log("Email: " + $('#email').val());
+            console.log("Password: " + $('#password').val());
+            console.log("Website: " + $('#website').val());
             evt.preventDefault();
         });
 

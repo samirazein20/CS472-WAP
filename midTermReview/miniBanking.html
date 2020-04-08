@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script defer src="styles/miniBanking.js"></script>
+    <!-- 1. External stylesheet-->
+    <link rel="stylesheet" href="./styles/miniBanking.css" type="text/css">
+    <title>MiniBanking App</title>
+</head>
+
+<body>
+    <!-- <div class="row"> -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d0efff;">
+        <a class="navbar-brand" href="#">
+            <h2>CS472 ::: MiniBanking App</h2>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 60em;">
+            <ul class="nav navbar-nav">
+                <button class="btn btn-dark" type="submit"><span class="navbar-toggler-icon bg-dark"></span></button>
+            </ul>
+        </div>
+    </nav>
+    <!-- </div> -->
+    <div class="container">
+        <fieldset style="border:5px solid  #d0efff; border-radius:8px; box-shadow:0 0 8px #d0efff;padding: 6px;">
+            <legend style="text-align: left;margin-top:-15px; background-color: #152238; color: #d0efff; border-radius:20px;">
+                <h3 style="text-align: center;">Bank Account Form</h3>
+            </legend>
+            <form id="bankAccountForm">
+                <div class="tile">
+                    <div class="tile-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group required">
+                                    <label for="actNo">Account No</label>
+                                    <input type="text" class="form-control form-control-lg" id="accountNo" placeholder="01-XXX-XXXX" required="">
+                                    <small class="form-text text-muted">Your unique account number</small>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group required">
+                                    <label for="custName">Customer Name</label>
+                                    <input type="text" class="form-control form-control-lg" id="customerName" placeholder="e.g. John B. Smith" required>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group required">
+                                    <label>Type Of Account</label>
+                                    <select required class="form-control" id="account">
+                                        <option value="">Select Account Type</option>
+                                        <option value="Checking">Checking</option>
+                                        <option value="Savings">Savings</option>
+                                        <option value="Loan">Loan</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success" id="createAccount">Create New Account</button>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div id="displayInfo" class="row" style="display: none;">
+                            <div class="col-md-12">
+                                <fieldset style="border:2px solid  #d0efff; border-radius:8px; box-shadow:0 0 8px #d0efff;padding: 6px;">
+                                    <legend style="text-align: left;margin-top:-15px; background-color: #152238; color: #d0efff; border-radius:20px;">
+                                        <h3 style="text-align: center;">
+                                            List Of Customers
+                                        </h3>
+                                    </legend>
+                                    <div class="row">
+                                        <ul id="listOfAccounts">
+                                            <li id="list1"></li>
+                                        </ul>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d0efff; border-radius: 10px;">
+                <a class="navbar-brand" href="#">
+                    <h2>CS472 ::: MiniBanking App</h2>
+                </a>
+            </nav>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
