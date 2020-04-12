@@ -11,6 +11,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./vendor/animate/animate.css">
@@ -56,7 +57,7 @@
                 </div>
 
                 <div class="table100-body js-pscroll">
-                    <table>
+                    <table id="dtBasicExample1">
                         <tbody id="bookContent">
 
                         </tbody>
@@ -81,14 +82,6 @@
 <!--===============================================================================================-->
 <script src="./js/main.js"></script>
 <script src="./js/libraryBooksCollection.js"></script>
-<script>
-    $('.js-pscroll').each(function () {
-        var ps = new PerfectScrollbar(this);
 
-        $(window).on('resize', function () {
-            ps.update();
-        })
-    });
-</script>
 </body>
 </html>

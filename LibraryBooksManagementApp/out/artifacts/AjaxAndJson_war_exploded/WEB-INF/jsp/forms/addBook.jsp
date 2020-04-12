@@ -15,6 +15,12 @@
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .error
+        {
+            border: 2px solid red;
+        }
+    </style>
 </head>
 <body>
 <%@include file="../fragments/header.jsp" %>
@@ -68,7 +74,7 @@
                 <div class="form-group">
                     <label>*Date Published</label>
                     <div class='input-group date'>
-                        <input type='date' id="datePublished" class="form-control form-control-lg" placeholder="yyyy-mm-dd"/>
+                        <input type='date' id="datePublished" class="form-control form-control-lg" placeholder="yyyy-mm-dd" required>
 <%--                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>--%>
                     </div>
                 </div>
